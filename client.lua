@@ -1,7 +1,7 @@
 -- CONFIG --
 
 -- AFK Kick Time edit if wanted
-secondsUntilKick = 180
+secondsUntilKick = 200
 
 kickWarning = true
 
@@ -17,9 +17,9 @@ Citizen.CreateThread(function()
 
 			if currentPos == prevPos then
 				if time > 0 then
-					if kickWarning and time == math.ceil(secondsUntilKick / 4) then
+			        	if kickWarning and time == math.ceil(secondsUntilKick / 4) then
 						TriggerEvent("chatMessage", "WARNING", {255, 225, 0}, "^1You are going to be kicked in " .. time .. " seconds for being AFK!")
-					end
+				        	end
 						
 					time = time - 1
 				else
